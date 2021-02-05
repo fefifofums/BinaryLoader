@@ -5,8 +5,6 @@
 #include <errno.h>
 #include <vector>
 
-#include <iostream>
-
 #include "loader.h"
 
 static bfd* open_bfd(std::string &fname)
