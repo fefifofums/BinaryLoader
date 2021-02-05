@@ -13,8 +13,8 @@ class Symbol;
 class Symbol {
 public:
   enum SymbolType {
-    SYM_TYPE_UKN = 0;
-    SYM_TYPE_FUNC = 1;
+    SYM_TYPE_UKN = 0,
+    SYM_TYPE_FUNC = 1
   };
 
   Symbol() : type(SYM_TYPE_UKN), name(), addr(0) {}
@@ -52,7 +52,7 @@ public:
     BIN_TYPE_ELF = 1,
     BIN_TYPE_PE = 2
   };
-  enum BinarytArch {
+  enum BinaryArch {
     ARCH_NONE = 0,
     ARCH_X86 = 1
   };
@@ -62,7 +62,7 @@ public:
   Section *get_text_section()
   { for(auto &s : sections) if(s.name == ".text") return &s; return NULL; }
   Section *get_rodata_section()
-  { for(auto &s : sections) if(s.name == ".rodata") return &s return NULL; }
+  { for(auto &s : sections) if(s.name == ".rodata") return &s; return NULL; }
 
   std::string filename;
   BinaryType type;
