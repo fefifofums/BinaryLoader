@@ -59,10 +59,8 @@ public:
 
   Binary() : type(BIN_TYPE_AUTO), arch(ARCH_NONE), bits(0), entry(0) {}
 
-  Section *get_text_section()
-  { for(auto &s : sections) if(s.name == ".text") return &s; return NULL; }
-  Section *get_rodata_section()
-  { for(auto &s : sections) if(s.name == ".rodata") return &s; return NULL; }
+  Section *get_section(std::string sec)
+  { for(auto &s : sections) if(s.name == sec) return &s; return NULL; }
 
   std::string filename;
   BinaryType type;
